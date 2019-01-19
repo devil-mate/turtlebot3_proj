@@ -1,17 +1,1 @@
-git的使用
-
-1.建立远程仓库和本地大链接（ssh），即配置好后，可以靠ssh（目录～/.ssh）建立链接，就可以使用git各种指令远程操作库。
-2.提交项目分几个步骤：git init //先初始化在需要提交的项目路径下;
-					 git add filename //添加需要上传的文件或者提交所有文件 git add ./;
-					 git commit -m "自己添加大描述" //推送;
-					 git remote add origin 
-					 git remote add origin https://github.com/你的github用户名/你的github仓库.git//添加一个远程仓库;
-					 git push origin master//提交完成
-					 
-					 
-					 git push origin master ;
-	
-
-					 
-
-添加一个readme文件
+删除之前的所有，更改
