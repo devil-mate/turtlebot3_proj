@@ -53,7 +53,7 @@
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <odometrySource>world</odometrySource>
-      <publishOdomTF>false</publishOdomTF>
+      <publishOdomTF>true</publishOdomTF>
       <robotBaseFrame>base_footprint</robotBaseFrame>
       <publishWheelTF>false</publishWheelTF>
       <publishTf>true</publishTf>
@@ -70,12 +70,12 @@
     </plugin>
   </gazebo>
 
-  <!-- <gazebo>
+  <gazebo>
     <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
       <alwaysOn>true</alwaysOn>
       <bodyName>imu_link</bodyName>
       <frameName>imu_link</frameName>
-      <topicName>imu_raw</topicName>
+      <topicName>imu</topicName>
       <serviceName>imu_service</serviceName>
       <gaussianNoise>0.0</gaussianNoise>
       <updateRate>0</updateRate>
@@ -97,7 +97,7 @@
         </noise>
       </imu>
     </plugin>
-  </gazebo> -->
+  </gazebo>
 
   <gazebo reference="base_scan">
     <material>Gazebo/FlatBlack</material>
