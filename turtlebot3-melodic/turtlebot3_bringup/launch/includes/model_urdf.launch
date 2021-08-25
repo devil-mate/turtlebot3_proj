@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="id_robot" default="robot"/>
+    <arg name="prefix" default="$(arg id_robot)_"/>
+	<arg name="xacro_robotFile" default=""/>
+	<param name="robot_description" command="$(find xacro)/xacro $(arg xacro_robotFile)"/>
+</launch>

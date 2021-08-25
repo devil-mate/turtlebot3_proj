@@ -1,0 +1,19 @@
+<launch>
+  <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]"/>
+
+  <arg name="set_lidar_frame_id" default="base_scan"/>
+
+  <arg name="xacro_robotFile" default="$(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro"/>
+  <arg name="rvizConfig" default="$(find tv_bringup)/rviz/robotBase.rviz"/>
+  <arg name="gazeboSim" default="true"/>
+  <arg name="haveModel" default="false"/>
+
+  
+  <!-- 没有履带车模型，发布其tf -->
+  <include unless="$(arg haveModel)" file="$(find tv_bringup)/launch/includes/tv_nomodel_tf.launch.xml">
+  </include>
+  <!--  -->
+  <include if="$(arg haveModel)" file= "$(find tv_bringup)/launch/tv_model.launch">
+    <arg name ="xacro_robotFile" value="$(arg xacro_robotFile)"/>
+  </include>  
+</launch>
