@@ -11,7 +11,7 @@
   <arg name="launch_slam" default="false"/> 
   <arg name="launch_movebase" default="false"/> 
   <arg name="dataFusion" default="true"/> 
-  <arg name="cmdGUI" default="false"/>
+  <arg name="cmdGUI" default="true"/>
   <arg name="rvizConfig" default="$(find turtlebot3_navigation)/rviz/t3_navigation.rviz"/>
   <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
   
