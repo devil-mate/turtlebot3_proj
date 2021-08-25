@@ -8,8 +8,8 @@
   <arg name="move_forward_only" default="false"/>
   <!-- 使用各自的rviz配置，主要用于slam和navigation，其配置不同 -->
   <arg name="perRviz_open" default="true"/> 
-  <arg name="launch_slam" default="false"/> 
-  <arg name="launch_movebase" default="false"/> 
+  <arg name="launch_slam" default="true"/> 
+  <arg name="launch_movebase" default="true"/> 
   <arg name="dataFusion" default="true"/> 
   <arg name="cmdGUI" default="false"/>
   <arg name="rvizConfig" default="$(find turtlebot3_navigation)/rviz/t3_navigation.rviz"/>
