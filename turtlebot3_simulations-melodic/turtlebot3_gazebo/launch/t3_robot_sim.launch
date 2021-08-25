@@ -10,7 +10,7 @@
   <arg name="perRviz_open" default="true"/> 
   <arg name="launch_slam" default="true"/> 
   <arg name="launch_movebase" default="true"/> 
-  <arg name="gazeboSim" default="true"/>
+  <arg name="dataFusion" default="true"/> 
   <arg name="cmdGUI" default="false"/>
   <arg name="rvizConfig" default="$(find turtlebot3_navigation)/rviz/t3_navigation.rviz"/>
   <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
@@ -24,7 +24,9 @@
  
 
 
-
+  <!-- 数据融合  -->
+  <include if="$(arg dataFusion)" file="$(find turtlebot3_slam)/launch/t3_data_fusion.launch">
+  </include>
   <!-- map and amcl -->
   <!-- slam -->
   <include if="$(arg launch_slam)" file="$(find turtlebot3_slam)/launch/t3_$(arg slam_methods).launch">
