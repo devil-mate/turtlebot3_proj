@@ -129,7 +129,32 @@
     <origin xyz="-0.032 0 0.068" rpy="0 0 0"/>
   </joint>
 
-  <link name="imu_link"/>
+  <!-- <link name="imu_link"/> -->
+  <xacro:macro name="solid_cuboid_inertia" params="m w h d">
+    <inertia  ixx="${(m*(h*h+d*d))/12}" ixy = "0" ixz = "0"
+              iyy="${(m*(w*w+d*d))/12}" iyz = "0"
+              izz="${(m*(w*w+h*h))/12}"
+     />
+  </xacro:macro>
+  <link name="imu_link">
+	    <inertial>
+        <origin xyz="0.0 0 0.01" rpy="0 0 0" />
+        <mass value="0.005" />
+			  <xacro:solid_cuboid_inertia m="0.005" w="0.001" h="0.001" d="0.001" />
+		  </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size="0.001 0.001 0.001"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+	  </link>
 
   <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
