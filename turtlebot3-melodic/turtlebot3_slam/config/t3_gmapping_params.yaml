@@ -21,7 +21,7 @@ map_frame: map
   # kernelSize: 1 #用于查找对应的kernel size
   # occ_thresh: 0.25 #栅格地图栅格值
 map_update_interval: 0.1
-maxUrange: 3.0
+maxUrange: 15.0
 sigma: 0.05
 kernelSize: 1
 lstep: 0.05

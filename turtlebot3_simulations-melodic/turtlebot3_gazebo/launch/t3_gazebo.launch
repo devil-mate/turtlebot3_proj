@@ -3,8 +3,8 @@
   <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="-1.0"/>
   <arg name="z_pos" default="0.0"/>
-  <!-- <arg name="world_name" value="$(find tv_gazebo)/worlds/tv_test.world"/> -->
-  <arg name="world_name" value="$(find mygazebo)/worlds/house_2room.world"/>
+  <arg name="world_name" value="$(find tv_gazebo)/worlds/tv_test.world"/>
+  <!-- <arg name="world_name" value="$(find mygazebo)/worlds/house_2room.world"/> -->
   <!-- <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/> -->
   <!-- <arg name="robotName" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /> -->
   <arg name="xacro_robotFile" default="$(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro"/>
