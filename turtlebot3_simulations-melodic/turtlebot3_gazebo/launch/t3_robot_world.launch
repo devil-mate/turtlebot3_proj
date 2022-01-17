@@ -16,26 +16,27 @@
   <arg name="robot_model"  default="summit_xl_std.urdf.xacro"  doc="Different robot versions: ('')"/>
 
    <arg name="world_name" value="$(find tv_gazebo)/worlds/tv_test.world"/>
+   <arg name="groupNameSpace" default="t3"/>
   <!-- <arg name="world_name" value="$(find mygazebo)/worlds/house_2room.world"/> -->
   <!-- <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/> -->
   <!-- <arg name="robotName" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /> --> 
+  <!-- <group ns="$(arg groupNameSpace)"> -->
 
-  <include file= "$(find turtlebot3_bringup)/launch/t3_model.launch">
-    <arg name ="xacro_robotFile" value="$(arg xacro_robotFile)"/>
-  </include>
-  <!-- summit_xl_robot -->
+    <include file= "$(find turtlebot3_bringup)/launch/t3_model.launch">
+      <arg name ="xacro_robotFile" value="$(arg xacro_robotFile)"/>
+    </include>
 
+    <!-- 启动gazebo -->
+    <include file="$(find turtlebot3_gazebo)/launch/t3_gazebo.launch">
+      <arg name ="world_name" value="$(arg world_name)"/>
+    </include>
 
-  <group if ="$(arg rviz_use)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizConfig)"/>
-  </group>
+    <group if ="$(arg rviz_use)">
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizConfig)"/>
+    </group>
 
-  <!-- 启动gazebo -->
-  <include file="$(find turtlebot3_gazebo)/launch/t3_gazebo.launch">
-    <arg name ="world_name" value="$(arg world_name)"/>
-  </include>
- 
-  <group if ="$(arg cmdGUI)">
-    <include file="$(find tv_gui)/launch/tv_gui.launch"/>
-  </group>
+    <group if ="$(arg cmdGUI)">
+      <include file="$(find tv_gui)/launch/tv_gui.launch"/>
+    </group>
+  <!-- </group> -->
 </launch>
