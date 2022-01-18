@@ -6,7 +6,9 @@ project(turtlebot3_gazebo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
-
+find_package(Boost 1.75.0  EXACT REQUIRED COMPONENTS thread)
+include_directories(${Boost_INCLUDE_DIR})
+link_directories(${Boost_LIBRAIES})
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
 ################################################################################

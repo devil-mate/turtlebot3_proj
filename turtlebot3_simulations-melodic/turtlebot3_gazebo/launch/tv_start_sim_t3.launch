@@ -6,7 +6,6 @@
     <arg name="perRviz_open" default="false"/>
     <arg name="cmdGUI" default="false"/>
     <arg name="communicateRos" default="false"/>
-    
     <arg name="launchRviz" default="false"/>
     <arg name="launchSim" default="true"/>
     <arg name="prefix" default=""/>
