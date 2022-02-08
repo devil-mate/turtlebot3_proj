@@ -8,6 +8,9 @@ cmake_policy(SET CMP0054 NEW)
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
 
+find_package(Boost 1.65.1 EXACT REQUIRED COMPONENTS system thread)
+# include_directories(${Boost_INCLUDE_DIR})
+# link_directories(${Boost_LIBRAIES})
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
 ################################################################################
