@@ -1,0 +1,15 @@
+<launch>
+  <!-- Arguments -->
+
+  <!-- <arg name="rvizConfig" default="$(find tv_navigation)/rviz/navigation_tv.rviz" /> -->
+  <arg name="rvizConfig" default="$(find turtlebot3_gazebo)/rviz/navigation_t3.rviz" />
+  <!-- <arg name="rvizConfig" default="$(find tv_navigation)/rviz/t3_navigation.rviz" /> -->
+  <!-- <arg name="rvizConfig" default="$(find tv_navigation)/rviz/navigationsxl.rviz" /> -->
+  <!-- <arg name="groupNameSpace" default="t3"/> -->
+  <!-- rviz -->
+  <!-- <group ns="$(arg groupNameSpace)">  -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(arg rvizConfig)"/>
+  <!-- </group> -->
+
+</launch>

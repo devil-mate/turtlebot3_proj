@@ -1,0 +1,26 @@
+<launch>
+  <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="multi_robot_name" default=""/>
+  <arg name="xacro_robotFile" default="$(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro"/>
+
+
+  <!-- <include file="$(find tv_bringup)/launch/includes/description.launch.xml">
+    <arg name="model" value="$(arg model)" />
+     <arg name="robotFile" value="$(arg robotFile)" />
+  </include> -->
+   <!-- 每个模型单独一个文件解析，因为可能不同模型需要传入不同参数 -->
+   <include file="$(find tv_bringup)/launch/includes/model_urdf.launch">
+    <arg name ="xacro_robotFile" value="$(arg xacro_robotFile)"/>
+   </include>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value="$(arg multi_robot_name)"/>
+  </node>
+
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+    <param name="rate" value="50"/>
+  </node>
+
+</launch>
